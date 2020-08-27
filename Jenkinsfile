@@ -8,6 +8,13 @@ pipeline {
         archiveArtifacts artifacts: 'dist/trainSchedule.zip'
      }
    }
+ stage('Test'){
+     steps {
+        echo 'Running Test automation'
+        sh './gradlew build --no-daemon'
+     }
+   }
+
  }
 }
 
